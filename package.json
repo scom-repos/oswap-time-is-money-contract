@@ -1,0 +1,36 @@
+{
+  "name": "@scom/time-is-money-contract",
+  "version": "0.1.2",
+  "description": "",
+  "main": "lib/index.js",
+  "plugin": "dist/index.js",
+  "types": "types/index.d.ts",
+  "pluginTypes": "pluginTypes/index.d.ts",
+  "scripts": {
+    "build": "rm -rf lib && rm -rf dist && rm -rf types && sol2ts contracts.config.json && npm run build:lib && npm run build:dist",
+    "build:contracts": "rm -rf src/contracts && sol2ts contracts.json",
+    "build:lib": "tsc",
+    "build:dist": "npx @ijstech/compiler",
+    "deploy": "ts-node tools/deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ijstech/eth-contract": "^0.1.4"
+  },
+  "devDependencies": {
+    "@ijstech/cli": "^0.1.26",
+    "@ijstech/compiler": "^0.1.22",
+    "@ijstech/eth-wallet": "^0.1.35",
+    "@scom/contract-deployer": "^0.1.6",
+    "@scom/dapp": "^0.1.6",
+    "@openzeppelin/contracts": "4.5.0",
+    "@types/mocha": "9.0.0",
+    "@types/node": "14.17",
+    "ganache-cli": "6.12.2",
+    "mocha": "^9.2.1",
+    "ts-node": "^10.1.0",
+    "typescript": "4.2.4"
+  }
+}
