@@ -1,5 +1,5 @@
-/// <amd-module name="@scom/time-is-money-contract/contracts/Rewards.json.ts" />
-declare module "@scom/time-is-money-contract/contracts/Rewards.json.ts" {
+/// <amd-module name="@scom/oswap-time-is-money-contract/contracts/Rewards.json.ts" />
+declare module "@scom/oswap-time-is-money-contract/contracts/Rewards.json.ts" {
     const _default: {
         abi: ({
             inputs: {
@@ -44,8 +44,8 @@ declare module "@scom/time-is-money-contract/contracts/Rewards.json.ts" {
     };
     export default _default;
 }
-/// <amd-module name="@scom/time-is-money-contract/contracts/Rewards.ts" />
-declare module "@scom/time-is-money-contract/contracts/Rewards.ts" {
+/// <amd-module name="@scom/oswap-time-is-money-contract/contracts/Rewards.ts" />
+declare module "@scom/oswap-time-is-money-contract/contracts/Rewards.ts" {
     import { IWallet, Contract as _Contract, TransactionReceipt, BigNumber, Event, TransactionOptions } from "@ijstech/eth-contract";
     export interface IDeployParams {
         timeIsMoney: string;
@@ -135,8 +135,8 @@ declare module "@scom/time-is-money-contract/contracts/Rewards.ts" {
         }
     }
 }
-/// <amd-module name="@scom/time-is-money-contract/contracts/RewardsCommonStartDate.json.ts" />
-declare module "@scom/time-is-money-contract/contracts/RewardsCommonStartDate.json.ts" {
+/// <amd-module name="@scom/oswap-time-is-money-contract/contracts/RewardsCommonStartDate.json.ts" />
+declare module "@scom/oswap-time-is-money-contract/contracts/RewardsCommonStartDate.json.ts" {
     const _default_1: {
         abi: ({
             inputs: {
@@ -181,8 +181,8 @@ declare module "@scom/time-is-money-contract/contracts/RewardsCommonStartDate.js
     };
     export default _default_1;
 }
-/// <amd-module name="@scom/time-is-money-contract/contracts/RewardsCommonStartDate.ts" />
-declare module "@scom/time-is-money-contract/contracts/RewardsCommonStartDate.ts" {
+/// <amd-module name="@scom/oswap-time-is-money-contract/contracts/RewardsCommonStartDate.ts" />
+declare module "@scom/oswap-time-is-money-contract/contracts/RewardsCommonStartDate.ts" {
     import { IWallet, Contract as _Contract, TransactionReceipt, BigNumber, Event, TransactionOptions } from "@ijstech/eth-contract";
     export interface IDeployParams {
         timeIsMoney: string;
@@ -276,8 +276,8 @@ declare module "@scom/time-is-money-contract/contracts/RewardsCommonStartDate.ts
         }
     }
 }
-/// <amd-module name="@scom/time-is-money-contract/contracts/TimeIsMoney.json.ts" />
-declare module "@scom/time-is-money-contract/contracts/TimeIsMoney.json.ts" {
+/// <amd-module name="@scom/oswap-time-is-money-contract/contracts/TimeIsMoney.json.ts" />
+declare module "@scom/oswap-time-is-money-contract/contracts/TimeIsMoney.json.ts" {
     const _default_2: {
         abi: ({
             inputs: {
@@ -322,8 +322,8 @@ declare module "@scom/time-is-money-contract/contracts/TimeIsMoney.json.ts" {
     };
     export default _default_2;
 }
-/// <amd-module name="@scom/time-is-money-contract/contracts/TimeIsMoney.ts" />
-declare module "@scom/time-is-money-contract/contracts/TimeIsMoney.ts" {
+/// <amd-module name="@scom/oswap-time-is-money-contract/contracts/TimeIsMoney.ts" />
+declare module "@scom/oswap-time-is-money-contract/contracts/TimeIsMoney.ts" {
     import { IWallet, Contract as _Contract, TransactionReceipt, BigNumber, Event, TransactionOptions } from "@ijstech/eth-contract";
     export interface IDeployParams {
         token: string;
@@ -401,8 +401,8 @@ declare module "@scom/time-is-money-contract/contracts/TimeIsMoney.ts" {
         }
     }
 }
-/// <amd-module name="@scom/time-is-money-contract/contracts/TimeIsMoneyEther.json.ts" />
-declare module "@scom/time-is-money-contract/contracts/TimeIsMoneyEther.json.ts" {
+/// <amd-module name="@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEther.json.ts" />
+declare module "@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEther.json.ts" {
     const _default_3: {
         abi: ({
             inputs: {
@@ -447,8 +447,8 @@ declare module "@scom/time-is-money-contract/contracts/TimeIsMoneyEther.json.ts"
     };
     export default _default_3;
 }
-/// <amd-module name="@scom/time-is-money-contract/contracts/TimeIsMoneyEther.ts" />
-declare module "@scom/time-is-money-contract/contracts/TimeIsMoneyEther.ts" {
+/// <amd-module name="@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEther.ts" />
+declare module "@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEther.ts" {
     import { IWallet, Contract as _Contract, TransactionReceipt, BigNumber, Event, TransactionOptions } from "@ijstech/eth-contract";
     export interface IDeployParams {
         maximumTotalLock: number | BigNumber;
@@ -522,14 +522,14 @@ declare module "@scom/time-is-money-contract/contracts/TimeIsMoneyEther.ts" {
         }
     }
 }
-/// <amd-module name="@scom/time-is-money-contract/contracts/index.ts" />
-declare module "@scom/time-is-money-contract/contracts/index.ts" {
-    export { Rewards } from "@scom/time-is-money-contract/contracts/Rewards.ts";
-    export { RewardsCommonStartDate } from "@scom/time-is-money-contract/contracts/RewardsCommonStartDate.ts";
-    export { TimeIsMoney } from "@scom/time-is-money-contract/contracts/TimeIsMoney.ts";
-    export { TimeIsMoneyEther } from "@scom/time-is-money-contract/contracts/TimeIsMoneyEther.ts";
+/// <amd-module name="@scom/oswap-time-is-money-contract/contracts/index.ts" />
+declare module "@scom/oswap-time-is-money-contract/contracts/index.ts" {
+    export { Rewards } from "@scom/oswap-time-is-money-contract/contracts/Rewards.ts";
+    export { RewardsCommonStartDate } from "@scom/oswap-time-is-money-contract/contracts/RewardsCommonStartDate.ts";
+    export { TimeIsMoney } from "@scom/oswap-time-is-money-contract/contracts/TimeIsMoney.ts";
+    export { TimeIsMoneyEther } from "@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEther.ts";
 }
-/// <amd-module name="@scom/time-is-money-contract" />
-declare module "@scom/time-is-money-contract" {
-    export * as Contracts from "@scom/time-is-money-contract/contracts/index.ts";
+/// <amd-module name="@scom/oswap-time-is-money-contract" />
+declare module "@scom/oswap-time-is-money-contract" {
+    export * as Contracts from "@scom/oswap-time-is-money-contract/contracts/index.ts";
 }

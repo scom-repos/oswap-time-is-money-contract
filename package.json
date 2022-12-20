@@ -1,6 +1,6 @@
 {
-  "name": "@scom/time-is-money-contract",
-  "version": "0.1.2",
+  "name": "@scom/oswap-time-is-money-contract",
+  "version": "0.1.0",
   "description": "",
   "main": "lib/index.js",
   "plugin": "dist/index.js",
