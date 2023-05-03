@@ -1,14 +1,12 @@
 import {Contracts} from "../src";
 import {BigNumber, Utils, Wallet, Erc20} from "@ijstech/eth-wallet";
-import Web3 from 'web3';
 import * as Config from '../data/config';
 
 let rpcUrl = Config.rpcUrl
 let account = Config.deployer;
 
 async function deploy() {
-    let provider = new Web3.providers.HttpProvider(rpcUrl);
-    let wallet = new Wallet(provider, account);
+    let wallet = new Wallet(rpcUrl, account);
     for (let deploymentOptions of Config.deploymentOptionsArray) {
         let {timeIsMoneyOptions, rewardsOptions} = deploymentOptions;
         let timeIsMoney = new Contracts.TimeIsMoney(wallet);
