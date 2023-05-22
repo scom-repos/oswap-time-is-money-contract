@@ -23,6 +23,7 @@ export declare class TimeIsMoneyEther extends _Contract {
     lock: {
         (options?: number | BigNumber | TransactionOptions): Promise<TransactionReceipt>;
         call: (options?: number | BigNumber | TransactionOptions) => Promise<void>;
+        txData: (options?: number | BigNumber | TransactionOptions) => Promise<string>;
     };
     lockAmount: {
         (param1: string, options?: TransactionOptions): Promise<BigNumber>;
@@ -51,6 +52,7 @@ export declare class TimeIsMoneyEther extends _Contract {
     withdraw: {
         (allowWithdrawalBeforeRelease: boolean, options?: TransactionOptions): Promise<TransactionReceipt>;
         call: (allowWithdrawalBeforeRelease: boolean, options?: TransactionOptions) => Promise<void>;
+        txData: (allowWithdrawalBeforeRelease: boolean, options?: TransactionOptions) => Promise<string>;
     };
     withdrawn: {
         (param1: string, options?: TransactionOptions): Promise<boolean>;

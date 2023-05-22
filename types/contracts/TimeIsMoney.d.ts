@@ -24,6 +24,7 @@ export declare class TimeIsMoney extends _Contract {
     lock: {
         (amount: number | BigNumber, options?: TransactionOptions): Promise<TransactionReceipt>;
         call: (amount: number | BigNumber, options?: TransactionOptions) => Promise<void>;
+        txData: (amount: number | BigNumber, options?: TransactionOptions) => Promise<string>;
     };
     lockAmount: {
         (param1: string, options?: TransactionOptions): Promise<BigNumber>;
@@ -55,6 +56,7 @@ export declare class TimeIsMoney extends _Contract {
     withdraw: {
         (allowWithdrawalBeforeRelease: boolean, options?: TransactionOptions): Promise<TransactionReceipt>;
         call: (allowWithdrawalBeforeRelease: boolean, options?: TransactionOptions) => Promise<void>;
+        txData: (allowWithdrawalBeforeRelease: boolean, options?: TransactionOptions) => Promise<string>;
     };
     withdrawn: {
         (param1: string, options?: TransactionOptions): Promise<boolean>;

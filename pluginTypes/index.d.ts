@@ -74,6 +74,7 @@ declare module "@scom/oswap-time-is-money-contract/contracts/Rewards.ts" {
         claim: {
             (options?: TransactionOptions): Promise<TransactionReceipt>;
             call: (options?: TransactionOptions) => Promise<void>;
+            txData: (options?: TransactionOptions) => Promise<string>;
         };
         claimDeadline: {
             (options?: TransactionOptions): Promise<BigNumber>;
@@ -81,6 +82,7 @@ declare module "@scom/oswap-time-is-money-contract/contracts/Rewards.ts" {
         claimFor: {
             (account: string, options?: TransactionOptions): Promise<TransactionReceipt>;
             call: (account: string, options?: TransactionOptions) => Promise<void>;
+            txData: (account: string, options?: TransactionOptions) => Promise<string>;
         };
         claimSoFar: {
             (param1: string, options?: TransactionOptions): Promise<BigNumber>;
@@ -94,6 +96,7 @@ declare module "@scom/oswap-time-is-money-contract/contracts/Rewards.ts" {
         putFund: {
             (params: IPutFundParams, options?: TransactionOptions): Promise<TransactionReceipt>;
             call: (params: IPutFundParams, options?: TransactionOptions) => Promise<void>;
+            txData: (params: IPutFundParams, options?: TransactionOptions) => Promise<string>;
         };
         reward: {
             (options?: TransactionOptions): Promise<BigNumber>;
@@ -104,6 +107,7 @@ declare module "@scom/oswap-time-is-money-contract/contracts/Rewards.ts" {
         takeUnclaimed: {
             (options?: TransactionOptions): Promise<TransactionReceipt>;
             call: (options?: TransactionOptions) => Promise<void>;
+            txData: (options?: TransactionOptions) => Promise<string>;
         };
         timeIsMoney: {
             (options?: TransactionOptions): Promise<string>;
@@ -212,6 +216,7 @@ declare module "@scom/oswap-time-is-money-contract/contracts/RewardsCommonStartD
         claim: {
             (options?: TransactionOptions): Promise<TransactionReceipt>;
             call: (options?: TransactionOptions) => Promise<void>;
+            txData: (options?: TransactionOptions) => Promise<string>;
         };
         claimDeadline: {
             (options?: TransactionOptions): Promise<BigNumber>;
@@ -219,6 +224,7 @@ declare module "@scom/oswap-time-is-money-contract/contracts/RewardsCommonStartD
         claimFor: {
             (account: string, options?: TransactionOptions): Promise<TransactionReceipt>;
             call: (account: string, options?: TransactionOptions) => Promise<void>;
+            txData: (account: string, options?: TransactionOptions) => Promise<string>;
         };
         claimSoFar: {
             (param1: string, options?: TransactionOptions): Promise<BigNumber>;
@@ -232,6 +238,7 @@ declare module "@scom/oswap-time-is-money-contract/contracts/RewardsCommonStartD
         putFund: {
             (params: IPutFundParams, options?: TransactionOptions): Promise<TransactionReceipt>;
             call: (params: IPutFundParams, options?: TransactionOptions) => Promise<void>;
+            txData: (params: IPutFundParams, options?: TransactionOptions) => Promise<string>;
         };
         reward: {
             (options?: TransactionOptions): Promise<BigNumber>;
@@ -242,6 +249,7 @@ declare module "@scom/oswap-time-is-money-contract/contracts/RewardsCommonStartD
         takeUnclaimed: {
             (options?: TransactionOptions): Promise<TransactionReceipt>;
             call: (options?: TransactionOptions) => Promise<void>;
+            txData: (options?: TransactionOptions) => Promise<string>;
         };
         timeIsMoney: {
             (options?: TransactionOptions): Promise<string>;
@@ -350,6 +358,7 @@ declare module "@scom/oswap-time-is-money-contract/contracts/TimeIsMoney.ts" {
         lock: {
             (amount: number | BigNumber, options?: TransactionOptions): Promise<TransactionReceipt>;
             call: (amount: number | BigNumber, options?: TransactionOptions) => Promise<void>;
+            txData: (amount: number | BigNumber, options?: TransactionOptions) => Promise<string>;
         };
         lockAmount: {
             (param1: string, options?: TransactionOptions): Promise<BigNumber>;
@@ -381,6 +390,7 @@ declare module "@scom/oswap-time-is-money-contract/contracts/TimeIsMoney.ts" {
         withdraw: {
             (allowWithdrawalBeforeRelease: boolean, options?: TransactionOptions): Promise<TransactionReceipt>;
             call: (allowWithdrawalBeforeRelease: boolean, options?: TransactionOptions) => Promise<void>;
+            txData: (allowWithdrawalBeforeRelease: boolean, options?: TransactionOptions) => Promise<string>;
         };
         withdrawn: {
             (param1: string, options?: TransactionOptions): Promise<boolean>;
@@ -474,6 +484,7 @@ declare module "@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEther.ts
         lock: {
             (options?: number | BigNumber | TransactionOptions): Promise<TransactionReceipt>;
             call: (options?: number | BigNumber | TransactionOptions) => Promise<void>;
+            txData: (options?: number | BigNumber | TransactionOptions) => Promise<string>;
         };
         lockAmount: {
             (param1: string, options?: TransactionOptions): Promise<BigNumber>;
@@ -502,6 +513,7 @@ declare module "@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEther.ts
         withdraw: {
             (allowWithdrawalBeforeRelease: boolean, options?: TransactionOptions): Promise<TransactionReceipt>;
             call: (allowWithdrawalBeforeRelease: boolean, options?: TransactionOptions) => Promise<void>;
+            txData: (allowWithdrawalBeforeRelease: boolean, options?: TransactionOptions) => Promise<string>;
         };
         withdrawn: {
             (param1: string, options?: TransactionOptions): Promise<boolean>;

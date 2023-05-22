@@ -130,8 +130,13 @@ define("@scom/oswap-time-is-money-contract/contracts/Rewards.ts", ["require", "e
                 let result = await this.call('claim', [], options);
                 return;
             };
+            let claim_txData = async (options) => {
+                let result = await this.txData('claim', [], options);
+                return result;
+            };
             this.claim = Object.assign(claim_send, {
-                call: claim_call
+                call: claim_call,
+                txData: claim_txData
             });
             let claimFor_send = async (account, options) => {
                 let result = await this.send('claimFor', [account], options);
@@ -141,8 +146,13 @@ define("@scom/oswap-time-is-money-contract/contracts/Rewards.ts", ["require", "e
                 let result = await this.call('claimFor', [account], options);
                 return;
             };
+            let claimFor_txData = async (account, options) => {
+                let result = await this.txData('claimFor', [account], options);
+                return result;
+            };
             this.claimFor = Object.assign(claimFor_send, {
-                call: claimFor_call
+                call: claimFor_call,
+                txData: claimFor_txData
             });
             let putFundParams = (params) => [params.from, this.wallet.utils.toString(params.amount)];
             let putFund_send = async (params, options) => {
@@ -153,8 +163,13 @@ define("@scom/oswap-time-is-money-contract/contracts/Rewards.ts", ["require", "e
                 let result = await this.call('putFund', putFundParams(params), options);
                 return;
             };
+            let putFund_txData = async (params, options) => {
+                let result = await this.txData('putFund', putFundParams(params), options);
+                return result;
+            };
             this.putFund = Object.assign(putFund_send, {
-                call: putFund_call
+                call: putFund_call,
+                txData: putFund_txData
             });
             let takeUnclaimed_send = async (options) => {
                 let result = await this.send('takeUnclaimed', [], options);
@@ -164,8 +179,13 @@ define("@scom/oswap-time-is-money-contract/contracts/Rewards.ts", ["require", "e
                 let result = await this.call('takeUnclaimed', [], options);
                 return;
             };
+            let takeUnclaimed_txData = async (options) => {
+                let result = await this.txData('takeUnclaimed', [], options);
+                return result;
+            };
             this.takeUnclaimed = Object.assign(takeUnclaimed_send, {
-                call: takeUnclaimed_call
+                call: takeUnclaimed_call,
+                txData: takeUnclaimed_txData
             });
         }
     }
@@ -310,8 +330,13 @@ define("@scom/oswap-time-is-money-contract/contracts/RewardsCommonStartDate.ts",
                 let result = await this.call('claim', [], options);
                 return;
             };
+            let claim_txData = async (options) => {
+                let result = await this.txData('claim', [], options);
+                return result;
+            };
             this.claim = Object.assign(claim_send, {
-                call: claim_call
+                call: claim_call,
+                txData: claim_txData
             });
             let claimFor_send = async (account, options) => {
                 let result = await this.send('claimFor', [account], options);
@@ -321,8 +346,13 @@ define("@scom/oswap-time-is-money-contract/contracts/RewardsCommonStartDate.ts",
                 let result = await this.call('claimFor', [account], options);
                 return;
             };
+            let claimFor_txData = async (account, options) => {
+                let result = await this.txData('claimFor', [account], options);
+                return result;
+            };
             this.claimFor = Object.assign(claimFor_send, {
-                call: claimFor_call
+                call: claimFor_call,
+                txData: claimFor_txData
             });
             let putFundParams = (params) => [params.from, this.wallet.utils.toString(params.amount)];
             let putFund_send = async (params, options) => {
@@ -333,8 +363,13 @@ define("@scom/oswap-time-is-money-contract/contracts/RewardsCommonStartDate.ts",
                 let result = await this.call('putFund', putFundParams(params), options);
                 return;
             };
+            let putFund_txData = async (params, options) => {
+                let result = await this.txData('putFund', putFundParams(params), options);
+                return result;
+            };
             this.putFund = Object.assign(putFund_send, {
-                call: putFund_call
+                call: putFund_call,
+                txData: putFund_txData
             });
             let takeUnclaimed_send = async (options) => {
                 let result = await this.send('takeUnclaimed', [], options);
@@ -344,8 +379,13 @@ define("@scom/oswap-time-is-money-contract/contracts/RewardsCommonStartDate.ts",
                 let result = await this.call('takeUnclaimed', [], options);
                 return;
             };
+            let takeUnclaimed_txData = async (options) => {
+                let result = await this.txData('takeUnclaimed', [], options);
+                return result;
+            };
             this.takeUnclaimed = Object.assign(takeUnclaimed_send, {
-                call: takeUnclaimed_call
+                call: takeUnclaimed_call,
+                txData: takeUnclaimed_txData
             });
         }
     }
@@ -483,8 +523,13 @@ define("@scom/oswap-time-is-money-contract/contracts/TimeIsMoney.ts", ["require"
                 let result = await this.call('lock', [this.wallet.utils.toString(amount)], options);
                 return;
             };
+            let lock_txData = async (amount, options) => {
+                let result = await this.txData('lock', [this.wallet.utils.toString(amount)], options);
+                return result;
+            };
             this.lock = Object.assign(lock_send, {
-                call: lock_call
+                call: lock_call,
+                txData: lock_txData
             });
             let withdraw_send = async (allowWithdrawalBeforeRelease, options) => {
                 let result = await this.send('withdraw', [allowWithdrawalBeforeRelease], options);
@@ -494,8 +539,13 @@ define("@scom/oswap-time-is-money-contract/contracts/TimeIsMoney.ts", ["require"
                 let result = await this.call('withdraw', [allowWithdrawalBeforeRelease], options);
                 return;
             };
+            let withdraw_txData = async (allowWithdrawalBeforeRelease, options) => {
+                let result = await this.txData('withdraw', [allowWithdrawalBeforeRelease], options);
+                return result;
+            };
             this.withdraw = Object.assign(withdraw_send, {
-                call: withdraw_call
+                call: withdraw_call,
+                txData: withdraw_txData
             });
         }
     }
@@ -627,8 +677,13 @@ define("@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEther.ts", ["req
                 let result = await this.call('lock', [], options);
                 return;
             };
+            let lock_txData = async (options) => {
+                let result = await this.txData('lock', [], options);
+                return result;
+            };
             this.lock = Object.assign(lock_send, {
-                call: lock_call
+                call: lock_call,
+                txData: lock_txData
             });
             let withdraw_send = async (allowWithdrawalBeforeRelease, options) => {
                 let result = await this.send('withdraw', [allowWithdrawalBeforeRelease], options);
@@ -638,8 +693,13 @@ define("@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEther.ts", ["req
                 let result = await this.call('withdraw', [allowWithdrawalBeforeRelease], options);
                 return;
             };
+            let withdraw_txData = async (allowWithdrawalBeforeRelease, options) => {
+                let result = await this.txData('withdraw', [allowWithdrawalBeforeRelease], options);
+                return result;
+            };
             this.withdraw = Object.assign(withdraw_send, {
-                call: withdraw_call
+                call: withdraw_call,
+                txData: withdraw_txData
             });
         }
     }

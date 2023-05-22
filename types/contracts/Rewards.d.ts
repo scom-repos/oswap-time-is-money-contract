@@ -26,6 +26,7 @@ export declare class Rewards extends _Contract {
     claim: {
         (options?: TransactionOptions): Promise<TransactionReceipt>;
         call: (options?: TransactionOptions) => Promise<void>;
+        txData: (options?: TransactionOptions) => Promise<string>;
     };
     claimDeadline: {
         (options?: TransactionOptions): Promise<BigNumber>;
@@ -33,6 +34,7 @@ export declare class Rewards extends _Contract {
     claimFor: {
         (account: string, options?: TransactionOptions): Promise<TransactionReceipt>;
         call: (account: string, options?: TransactionOptions) => Promise<void>;
+        txData: (account: string, options?: TransactionOptions) => Promise<string>;
     };
     claimSoFar: {
         (param1: string, options?: TransactionOptions): Promise<BigNumber>;
@@ -46,6 +48,7 @@ export declare class Rewards extends _Contract {
     putFund: {
         (params: IPutFundParams, options?: TransactionOptions): Promise<TransactionReceipt>;
         call: (params: IPutFundParams, options?: TransactionOptions) => Promise<void>;
+        txData: (params: IPutFundParams, options?: TransactionOptions) => Promise<string>;
     };
     reward: {
         (options?: TransactionOptions): Promise<BigNumber>;
@@ -56,6 +59,7 @@ export declare class Rewards extends _Contract {
     takeUnclaimed: {
         (options?: TransactionOptions): Promise<TransactionReceipt>;
         call: (options?: TransactionOptions) => Promise<void>;
+        txData: (options?: TransactionOptions) => Promise<string>;
     };
     timeIsMoney: {
         (options?: TransactionOptions): Promise<string>;
