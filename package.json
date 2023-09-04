@@ -7,11 +7,11 @@
   "types": "types/index.d.ts",
   "pluginTypes": "pluginTypes/index.d.ts",
   "scripts": {
-    "build": "rm -rf lib && rm -rf dist && rm -rf types && sol2ts contracts.config.json && npm run build:lib && npm run build:dist",
-    "build:contracts": "rm -rf src/contracts && sol2ts contracts.json",
-    "build:lib": "tsc",
-    "build:dist": "npx @ijstech/compiler",
-    "deploy": "ts-node tools/deploy"
+    "build": "rm -rf lib && rm -rf dist && rm -rf types && npm run build:contracts && npm run build:deployer",
+    "build:deployer": "rm -rf deployer && npx @ijstech/cli bundle deployer",
+    "build:contracts": "rm -rf src/contracts && npx @ijstech/compiler",
+    "deploy": "ts-node tools/deploy",
+    "deployer": "npx @ijstech/cli serve 8080 deployer"
   },
   "keywords": [],
   "author": "",

@@ -801,5 +801,47 @@ declare module "@scom/oswap-time-is-money-contract/contracts/index.ts" {
 }
 /// <amd-module name="@scom/oswap-time-is-money-contract" />
 declare module "@scom/oswap-time-is-money-contract" {
-    export * as Contracts from "@scom/oswap-time-is-money-contract/contracts/index.ts";
+    import * as Contracts from "@scom/oswap-time-is-money-contract/contracts/index.ts";
+    export { Contracts };
+    import { IWallet } from '@ijstech/eth-wallet';
+    export interface ITimeIsMoneyOptions {
+        token: string;
+        maximumTotalLock: number;
+        minimumLockTime: number;
+        startOfEntryPeriod: number;
+        endOfEntryPeriod: number;
+        perAddressCap: number;
+    }
+    export interface IRewardOptions {
+        token: string;
+        multiplier: number;
+        initialReward: number;
+        vestingPeriod: number;
+        claimDeadline: number;
+        admin: string;
+    }
+    export interface IDeploymentOptions {
+        timeIsMoneyOptions: ITimeIsMoneyOptions;
+        rewardsOptions: IRewardOptions[];
+    }
+    export interface IDeployOptions {
+        deploymentOptionsArray: IDeploymentOptions[];
+    }
+    export interface ITimeIsMoneyResult {
+        timeIsMoney: string;
+        rewards: string[];
+    }
+    export interface IDeployResult {
+        timeIsMoneyResultArray: ITimeIsMoneyResult[];
+    }
+    export var DefaultDeployOptions: IDeployOptions;
+    export function deploy(wallet: IWallet, options?: IDeployOptions): Promise<IDeployResult>;
+    export function onProgress(handler: any): void;
+    const _default_6: {
+        Contracts: typeof Contracts;
+        deploy: typeof deploy;
+        DefaultDeployOptions: IDeployOptions;
+        onProgress: typeof onProgress;
+    };
+    export default _default_6;
 }
