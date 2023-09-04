@@ -189,8 +189,8 @@ define("@scom/oswap-time-is-money-contract/contracts/Rewards.ts", ["require", "e
             });
         }
     }
-    exports.Rewards = Rewards;
     Rewards._abi = Rewards_json_1.default.abi;
+    exports.Rewards = Rewards;
 });
 define("@scom/oswap-time-is-money-contract/contracts/RewardsCommonStartDate.json.ts", ["require", "exports"], function (require, exports) {
     "use strict";
@@ -389,8 +389,8 @@ define("@scom/oswap-time-is-money-contract/contracts/RewardsCommonStartDate.ts",
             });
         }
     }
-    exports.RewardsCommonStartDate = RewardsCommonStartDate;
     RewardsCommonStartDate._abi = RewardsCommonStartDate_json_1.default.abi;
+    exports.RewardsCommonStartDate = RewardsCommonStartDate;
 });
 define("@scom/oswap-time-is-money-contract/contracts/TimeIsMoney.json.ts", ["require", "exports"], function (require, exports) {
     "use strict";
@@ -549,8 +549,8 @@ define("@scom/oswap-time-is-money-contract/contracts/TimeIsMoney.ts", ["require"
             });
         }
     }
-    exports.TimeIsMoney = TimeIsMoney;
     TimeIsMoney._abi = TimeIsMoney_json_1.default.abi;
+    exports.TimeIsMoney = TimeIsMoney;
 });
 define("@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEther.json.ts", ["require", "exports"], function (require, exports) {
     "use strict";
@@ -703,17 +703,336 @@ define("@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEther.ts", ["req
             });
         }
     }
-    exports.TimeIsMoneyEther = TimeIsMoneyEther;
     TimeIsMoneyEther._abi = TimeIsMoneyEther_json_1.default.abi;
+    exports.TimeIsMoneyEther = TimeIsMoneyEther;
 });
-define("@scom/oswap-time-is-money-contract/contracts/index.ts", ["require", "exports", "@scom/oswap-time-is-money-contract/contracts/Rewards.ts", "@scom/oswap-time-is-money-contract/contracts/RewardsCommonStartDate.ts", "@scom/oswap-time-is-money-contract/contracts/TimeIsMoney.ts", "@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEther.ts"], function (require, exports, Rewards_1, RewardsCommonStartDate_1, TimeIsMoney_1, TimeIsMoneyEther_1) {
+define("@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEtherV2.json.ts", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.TimeIsMoneyEther = exports.TimeIsMoney = exports.RewardsCommonStartDate = exports.Rewards = void 0;
+    ///<amd-module name='@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEtherV2.json.ts'/> 
+    exports.default = {
+        "abi": [
+            { "inputs": [{ "internalType": "uint256", "name": "maximumTotalLock_", "type": "uint256" }, { "internalType": "uint256", "name": "minimumLockTime_", "type": "uint256" }, { "internalType": "uint256", "name": "startOfEntryPeriod_", "type": "uint256" }, { "internalType": "uint256", "name": "endOfEntryPeriod_", "type": "uint256" }, { "internalType": "uint256", "name": "perAddressCap_", "type": "uint256" }], "stateMutability": "nonpayable", "type": "constructor" },
+            { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "staker", "type": "address" }, { "indexed": true, "internalType": "address", "name": "sender", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "Deposit", "type": "event" },
+            { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "account", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }, { "indexed": false, "internalType": "bool", "name": "heldLongEnough", "type": "bool" }], "name": "Withdrawal", "type": "event" },
+            { "inputs": [], "name": "endOfEntryPeriod", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" },
+            { "inputs": [{ "internalType": "address", "name": "account", "type": "address" }], "name": "getCredit", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" },
+            { "inputs": [{ "internalType": "address", "name": "to", "type": "address" }], "name": "lock", "outputs": [], "stateMutability": "payable", "type": "function" },
+            { "inputs": [{ "internalType": "address", "name": "", "type": "address" }], "name": "lockAmount", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" },
+            { "inputs": [], "name": "maximumTotalLock", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" },
+            { "inputs": [], "name": "minimumLockTime", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" },
+            { "inputs": [], "name": "perAddressCap", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" },
+            { "inputs": [{ "internalType": "address", "name": "account", "type": "address" }], "name": "readyToWithdraw", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "view", "type": "function" },
+            { "inputs": [{ "internalType": "address", "name": "", "type": "address" }], "name": "releaseTime", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" },
+            { "inputs": [], "name": "startOfEntryPeriod", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" },
+            { "inputs": [], "name": "totalLocked", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" },
+            { "inputs": [{ "internalType": "bool", "name": "allowWithdrawalBeforeRelease", "type": "bool" }], "name": "withdraw", "outputs": [], "stateMutability": "nonpayable", "type": "function" },
+            { "inputs": [{ "internalType": "address", "name": "", "type": "address" }], "name": "withdrawn", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "view", "type": "function" }
+        ],
+        "bytecode": "61012060405234801561001157600080fd5b50604051610ee3380380610ee383398101604081905261003091610050565b600160005560809490945260a09290925260c05260e0526101005261008f565b600080600080600060a08688031215610067578081fd5b5050835160208501516040860151606087015160809097015192989197509594509092509050565b60805160a05160c05160e05161010051610ded6100f66000396000818161018d015261097b01526000818161011e01526107d50152600081816102aa015261074b0152600081816102de0152610b2a0152600081816102760152610a0c0152610ded6000f3fe6080604052600436106100d25760003560e01c80636ef610921161007f578063cbc2efbe11610059578063cbc2efbe14610264578063e76a5de014610298578063ed6d0c5b146102cc578063f435f5a71461030057600080fd5b80636ef61092146101e557806395bc3bd014610215578063a810a54c1461024257600080fd5b806347dd5172116100b057806347dd51721461017b57806356891412146101af57806357344e6f146101c557600080fd5b80630a469e7a146100d7578063302ef3f31461010c57806334265c481461014e575b600080fd5b3480156100e357600080fd5b506100f76100f2366004610cc5565b610313565b60405190151581526020015b60405180910390f35b34801561011857600080fd5b506101407f000000000000000000000000000000000000000000000000000000000000000081565b604051908152602001610103565b34801561015a57600080fd5b50610140610169366004610cc5565b60036020526000908152604090205481565b34801561018757600080fd5b506101407f000000000000000000000000000000000000000000000000000000000000000081565b3480156101bb57600080fd5b5061014060015481565b3480156101d157600080fd5b506101406101e0366004610cc5565b6103a4565b3480156101f157600080fd5b506100f7610200366004610cc5565b60046020526000908152604090205460ff1681565b34801561022157600080fd5b50610140610230366004610cc5565b60026020526000908152604090205481565b34801561024e57600080fd5b5061026261025d366004610d00565b610402565b005b34801561027057600080fd5b506101407f000000000000000000000000000000000000000000000000000000000000000081565b3480156102a457600080fd5b506101407f000000000000000000000000000000000000000000000000000000000000000081565b3480156102d857600080fd5b506101407f000000000000000000000000000000000000000000000000000000000000000081565b61026261030e366004610cc5565b6106d6565b73ffffffffffffffffffffffffffffffffffffffff81166000908152600260205260408120541580159061036c575073ffffffffffffffffffffffffffffffffffffffff82166000908152600360205260409020544210155b801561039e575073ffffffffffffffffffffffffffffffffffffffff821660009081526004602052604090205460ff16155b92915050565b73ffffffffffffffffffffffffffffffffffffffff81166000908152600360205260408120544210156103d957506000919050565b5073ffffffffffffffffffffffffffffffffffffffff1660009081526002602052604090205490565b60026000541415610474576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c0060448201526064015b60405180910390fd5b600260009081553381526004602052604090205460ff161580156104a657503360009081526002602052604090205415155b61050c576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820181905260248201527f4e6f2065746865727320617661696c61626c6520746f2077697468647261772e604482015260640161046b565b3360009081526002602090815260408083205460039092529091205442101561063d57816105bc576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602860248201527f596f7572206574686572732077657265206e6f74206c6f636b6564206c6f6e6760448201527f20656e6f75676821000000000000000000000000000000000000000000000000606482015260840161046b565b33600090815260026020908152604080832083905560039091528120819055600180548392906105ed908490610d71565b909155506105fd90503382610bb6565b604080518281526000602082015233917f06e0c61e7e9f4912ee1f3ce060b59207b98f9a232d711462af3166aeeed1250a910160405180910390a26106cd565b33600081815260046020526040902080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0016600117905561067f9082610bb6565b336000818152600260209081526040918290205482519081526001918101919091527f06e0c61e7e9f4912ee1f3ce060b59207b98f9a232d711462af3166aeeed1250a910160405180910390a25b50506001600055565b60026000541415610743576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c00604482015260640161046b565b6002600055347f00000000000000000000000000000000000000000000000000000000000000004210156107d3576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601a60248201527f4974277320746f6f206561726c7920746f20646f207468697321000000000000604482015260640161046b565b7f0000000000000000000000000000000000000000000000000000000000000000421061085c576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601860248201527f536f7272792c20796f752061746520746f6f206c617465210000000000000000604482015260640161046b565b73ffffffffffffffffffffffffffffffffffffffff82166000908152600260205260409020541561090f576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602660248201527f596f75206861766520616c72656164792070617274696369706174656420696e60448201527f20746869732e0000000000000000000000000000000000000000000000000000606482015260840161046b565b60008111610979576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601860248201527f596f752063616e6e6f74206c6f636b206e6f7468696e67210000000000000000604482015260640161046b565b7f0000000000000000000000000000000000000000000000000000000000000000811115610a03576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601f60248201527f596f752063616e6e6f74206c6f636b206f76657220746865206c696d69742100604482015260640161046b565b600154610a30907f0000000000000000000000000000000000000000000000000000000000000000610d71565b811115610ae5576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152604760248201527f54686973206465706f73697420776f756c64206361757365206f757220746f7460448201527f616c206c6f636b656420616d6f756e7420746f2065786365656420746865206d60648201527f6178696d756d2e00000000000000000000000000000000000000000000000000608482015260a40161046b565b73ffffffffffffffffffffffffffffffffffffffff8216600090815260026020526040812082905560018054839290610b1f908490610d59565b90915550610b4f90507f000000000000000000000000000000000000000000000000000000000000000042610d59565b73ffffffffffffffffffffffffffffffffffffffff8316600081815260036020908152604091829020939093555183815233927f5548c837ab068cf56a2c2479df0882a4922fd203edb7517321831d95078c5f62910160405180910390a350506001600055565b6040805160008082526020820190925273ffffffffffffffffffffffffffffffffffffffff8416908390604051610bed9190610d20565b60006040518083038185875af1925050503d8060008114610c2a576040519150601f19603f3d011682016040523d82523d6000602084013e610c2f565b606091505b5050905080610cc0576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602360248201527f5472616e7366657248656c7065723a204554485f5452414e534645525f46414960448201527f4c45440000000000000000000000000000000000000000000000000000000000606482015260840161046b565b505050565b600060208284031215610cd6578081fd5b813573ffffffffffffffffffffffffffffffffffffffff81168114610cf9578182fd5b9392505050565b600060208284031215610d11578081fd5b81358015158114610cf9578182fd5b60008251815b81811015610d405760208186018101518583015201610d26565b81811115610d4e5782828501525b509190910192915050565b60008219821115610d6c57610d6c610d88565b500190565b600082821015610d8357610d83610d88565b500390565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fdfea26469706673582212201b97a3e16186053242635ca83934909c7b54b5c7b7d7bba899c2db90ddbe7eb364736f6c63430008040033"
+    };
+});
+define("@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEtherV2.ts", ["require", "exports", "@ijstech/eth-contract", "@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEtherV2.json.ts"], function (require, exports, eth_contract_5, TimeIsMoneyEtherV2_json_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.TimeIsMoneyEtherV2 = void 0;
+    class TimeIsMoneyEtherV2 extends eth_contract_5.Contract {
+        constructor(wallet, address) {
+            super(wallet, address, TimeIsMoneyEtherV2_json_1.default.abi, TimeIsMoneyEtherV2_json_1.default.bytecode);
+            this.assign();
+        }
+        deploy(params, options) {
+            return this.__deploy([this.wallet.utils.toString(params.maximumTotalLock), this.wallet.utils.toString(params.minimumLockTime), this.wallet.utils.toString(params.startOfEntryPeriod), this.wallet.utils.toString(params.endOfEntryPeriod), this.wallet.utils.toString(params.perAddressCap)], options);
+        }
+        parseDepositEvent(receipt) {
+            return this.parseEvents(receipt, "Deposit").map(e => this.decodeDepositEvent(e));
+        }
+        decodeDepositEvent(event) {
+            let result = event.data;
+            return {
+                staker: result.staker,
+                sender: result.sender,
+                amount: new eth_contract_5.BigNumber(result.amount),
+                _event: event
+            };
+        }
+        parseWithdrawalEvent(receipt) {
+            return this.parseEvents(receipt, "Withdrawal").map(e => this.decodeWithdrawalEvent(e));
+        }
+        decodeWithdrawalEvent(event) {
+            let result = event.data;
+            return {
+                account: result.account,
+                amount: new eth_contract_5.BigNumber(result.amount),
+                heldLongEnough: result.heldLongEnough,
+                _event: event
+            };
+        }
+        assign() {
+            let endOfEntryPeriod_call = async (options) => {
+                let result = await this.call('endOfEntryPeriod', [], options);
+                return new eth_contract_5.BigNumber(result);
+            };
+            this.endOfEntryPeriod = endOfEntryPeriod_call;
+            let getCredit_call = async (account, options) => {
+                let result = await this.call('getCredit', [account], options);
+                return new eth_contract_5.BigNumber(result);
+            };
+            this.getCredit = getCredit_call;
+            let lockAmount_call = async (param1, options) => {
+                let result = await this.call('lockAmount', [param1], options);
+                return new eth_contract_5.BigNumber(result);
+            };
+            this.lockAmount = lockAmount_call;
+            let maximumTotalLock_call = async (options) => {
+                let result = await this.call('maximumTotalLock', [], options);
+                return new eth_contract_5.BigNumber(result);
+            };
+            this.maximumTotalLock = maximumTotalLock_call;
+            let minimumLockTime_call = async (options) => {
+                let result = await this.call('minimumLockTime', [], options);
+                return new eth_contract_5.BigNumber(result);
+            };
+            this.minimumLockTime = minimumLockTime_call;
+            let perAddressCap_call = async (options) => {
+                let result = await this.call('perAddressCap', [], options);
+                return new eth_contract_5.BigNumber(result);
+            };
+            this.perAddressCap = perAddressCap_call;
+            let readyToWithdraw_call = async (account, options) => {
+                let result = await this.call('readyToWithdraw', [account], options);
+                return result;
+            };
+            this.readyToWithdraw = readyToWithdraw_call;
+            let releaseTime_call = async (param1, options) => {
+                let result = await this.call('releaseTime', [param1], options);
+                return new eth_contract_5.BigNumber(result);
+            };
+            this.releaseTime = releaseTime_call;
+            let startOfEntryPeriod_call = async (options) => {
+                let result = await this.call('startOfEntryPeriod', [], options);
+                return new eth_contract_5.BigNumber(result);
+            };
+            this.startOfEntryPeriod = startOfEntryPeriod_call;
+            let totalLocked_call = async (options) => {
+                let result = await this.call('totalLocked', [], options);
+                return new eth_contract_5.BigNumber(result);
+            };
+            this.totalLocked = totalLocked_call;
+            let withdrawn_call = async (param1, options) => {
+                let result = await this.call('withdrawn', [param1], options);
+                return result;
+            };
+            this.withdrawn = withdrawn_call;
+            let lock_send = async (to, options) => {
+                let result = await this.send('lock', [to], options);
+                return result;
+            };
+            let lock_call = async (to, options) => {
+                let result = await this.call('lock', [to], options);
+                return;
+            };
+            let lock_txData = async (to, options) => {
+                let result = await this.txData('lock', [to], options);
+                return result;
+            };
+            this.lock = Object.assign(lock_send, {
+                call: lock_call,
+                txData: lock_txData
+            });
+            let withdraw_send = async (allowWithdrawalBeforeRelease, options) => {
+                let result = await this.send('withdraw', [allowWithdrawalBeforeRelease], options);
+                return result;
+            };
+            let withdraw_call = async (allowWithdrawalBeforeRelease, options) => {
+                let result = await this.call('withdraw', [allowWithdrawalBeforeRelease], options);
+                return;
+            };
+            let withdraw_txData = async (allowWithdrawalBeforeRelease, options) => {
+                let result = await this.txData('withdraw', [allowWithdrawalBeforeRelease], options);
+                return result;
+            };
+            this.withdraw = Object.assign(withdraw_send, {
+                call: withdraw_call,
+                txData: withdraw_txData
+            });
+        }
+    }
+    TimeIsMoneyEtherV2._abi = TimeIsMoneyEtherV2_json_1.default.abi;
+    exports.TimeIsMoneyEtherV2 = TimeIsMoneyEtherV2;
+});
+define("@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyV2.json.ts", ["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    ///<amd-module name='@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyV2.json.ts'/> 
+    exports.default = {
+        "abi": [
+            { "inputs": [{ "internalType": "address", "name": "token_", "type": "address" }, { "internalType": "uint256", "name": "maximumTotalLock_", "type": "uint256" }, { "internalType": "uint256", "name": "minimumLockTime_", "type": "uint256" }, { "internalType": "uint256", "name": "startOfEntryPeriod_", "type": "uint256" }, { "internalType": "uint256", "name": "endOfEntryPeriod_", "type": "uint256" }, { "internalType": "uint256", "name": "perAddressCap_", "type": "uint256" }], "stateMutability": "nonpayable", "type": "constructor" },
+            { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "staker", "type": "address" }, { "indexed": true, "internalType": "address", "name": "sender", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "Deposit", "type": "event" },
+            { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "account", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }, { "indexed": false, "internalType": "bool", "name": "heldLongEnough", "type": "bool" }], "name": "Withdrawal", "type": "event" },
+            { "inputs": [], "name": "endOfEntryPeriod", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" },
+            { "inputs": [{ "internalType": "address", "name": "account", "type": "address" }], "name": "getCredit", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" },
+            { "inputs": [{ "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "lock", "outputs": [], "stateMutability": "nonpayable", "type": "function" },
+            { "inputs": [{ "internalType": "address", "name": "", "type": "address" }], "name": "lockAmount", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" },
+            { "inputs": [], "name": "maximumTotalLock", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" },
+            { "inputs": [], "name": "minimumLockTime", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" },
+            { "inputs": [], "name": "perAddressCap", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" },
+            { "inputs": [{ "internalType": "address", "name": "account", "type": "address" }], "name": "readyToWithdraw", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "view", "type": "function" },
+            { "inputs": [{ "internalType": "address", "name": "", "type": "address" }], "name": "releaseTime", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" },
+            { "inputs": [], "name": "startOfEntryPeriod", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" },
+            { "inputs": [], "name": "token", "outputs": [{ "internalType": "contract IERC20", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" },
+            { "inputs": [], "name": "totalLocked", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" },
+            { "inputs": [{ "internalType": "bool", "name": "allowWithdrawalBeforeRelease", "type": "bool" }], "name": "withdraw", "outputs": [], "stateMutability": "nonpayable", "type": "function" },
+            { "inputs": [{ "internalType": "address", "name": "", "type": "address" }], "name": "withdrawn", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "view", "type": "function" }
+        ],
+        "bytecode": "61014060405234801561001157600080fd5b5060405161139438038061139483398101604081905261003091610064565b600160005560609590951b6001600160601b03191660805260a09390935260c09190915260e05261010052610120526100c1565b60008060008060008060c0878903121561007c578182fd5b86516001600160a01b0381168114610092578283fd5b6020880151604089015160608a015160808b015160a0909b0151939c929b509099909850965090945092505050565b60805160601c60a05160c05160e051610100516101205161124961014b600039600081816101860152610615015260008181610131015261046f01526000818161024601526103e501526000818161026d015261080601526000818161021f01526106a60152600081816102940152818161079901528181610af60152610b9b01526112496000f3fe608060405234801561001057600080fd5b50600436106100ea5760003560e01c80636ef610921161008c578063cbc2efbe11610066578063cbc2efbe1461021a578063e76a5de014610241578063ed6d0c5b14610268578063fc0c546a1461028f57600080fd5b80636ef61092146101c457806395bc3bd0146101e7578063a810a54c1461020757600080fd5b806334265c48116100c857806334265c481461016157806347dd51721461018157806356891412146101a857806357344e6f146101b157600080fd5b80630a469e7a146100ef578063282d3fdf14610117578063302ef3f31461012c575b600080fd5b6101026100fd366004611090565b6102db565b60405190151581526020015b60405180910390f35b61012a6101253660046110aa565b61036c565b005b6101537f000000000000000000000000000000000000000000000000000000000000000081565b60405190815260200161010e565b61015361016f366004611090565b60036020526000908152604090205481565b6101537f000000000000000000000000000000000000000000000000000000000000000081565b61015360015481565b6101536101bf366004611090565b610892565b6101026101d2366004611090565b60046020526000908152604090205460ff1681565b6101536101f5366004611090565b60026020526000908152604090205481565b61012a6102153660046110d3565b6108f0565b6101537f000000000000000000000000000000000000000000000000000000000000000081565b6101537f000000000000000000000000000000000000000000000000000000000000000081565b6101537f000000000000000000000000000000000000000000000000000000000000000081565b6102b67f000000000000000000000000000000000000000000000000000000000000000081565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200161010e565b73ffffffffffffffffffffffffffffffffffffffff811660009081526002602052604081205415801590610334575073ffffffffffffffffffffffffffffffffffffffff82166000908152600360205260409020544210155b8015610366575073ffffffffffffffffffffffffffffffffffffffff821660009081526004602052604090205460ff16155b92915050565b600260005414156103de576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c0060448201526064015b60405180910390fd5b60026000557f000000000000000000000000000000000000000000000000000000000000000042101561046d576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601a60248201527f4974277320746f6f206561726c7920746f20646f20746869732100000000000060448201526064016103d5565b7f000000000000000000000000000000000000000000000000000000000000000042106104f6576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601860248201527f536f7272792c20796f752061746520746f6f206c61746521000000000000000060448201526064016103d5565b73ffffffffffffffffffffffffffffffffffffffff8216600090815260026020526040902054156105a9576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602660248201527f596f75206861766520616c72656164792070617274696369706174656420696e60448201527f20746869732e000000000000000000000000000000000000000000000000000060648201526084016103d5565b60008111610613576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601860248201527f596f752063616e6e6f74206c6f636b206e6f7468696e6721000000000000000060448201526064016103d5565b7f000000000000000000000000000000000000000000000000000000000000000081111561069d576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601f60248201527f596f752063616e6e6f74206c6f636b206f76657220746865206c696d6974210060448201526064016103d5565b6001546106ca907f0000000000000000000000000000000000000000000000000000000000000000611190565b81111561077f576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152604760248201527f54686973206465706f73697420776f756c64206361757365206f757220746f7460448201527f616c206c6f636b656420616d6f756e7420746f2065786365656420746865206d60648201527f6178696d756d2e00000000000000000000000000000000000000000000000000608482015260a4016103d5565b6107c173ffffffffffffffffffffffffffffffffffffffff7f000000000000000000000000000000000000000000000000000000000000000016333084610c1c565b73ffffffffffffffffffffffffffffffffffffffff82166000908152600260205260408120829055600180548392906107fb908490611178565b9091555061082b90507f000000000000000000000000000000000000000000000000000000000000000042611178565b73ffffffffffffffffffffffffffffffffffffffff8316600081815260036020908152604091829020939093555183815233927f5548c837ab068cf56a2c2479df0882a4922fd203edb7517321831d95078c5f62910160405180910390a350506001600055565b73ffffffffffffffffffffffffffffffffffffffff81166000908152600360205260408120544210156108c757506000919050565b5073ffffffffffffffffffffffffffffffffffffffff1660009081526002602052604090205490565b6002600054141561095d576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c0060448201526064016103d5565b600260009081553381526004602052604090205460ff1615801561098f57503360009081526002602052604090205415155b6109f5576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820181905260248201527f4e6f20746f6b656e7320617661696c61626c6520746f2077697468647261772e60448201526064016103d5565b33600090815260026020908152604080832054600390925290912054421015610b5d5781610aa5576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602860248201527f596f757220746f6b656e732077657265206e6f74206c6f636b6564206c6f6e6760448201527f20656e6f7567682100000000000000000000000000000000000000000000000060648201526084016103d5565b3360009081526002602090815260408083208390556003909152812081905560018054839290610ad6908490611190565b90915550610b1d905073ffffffffffffffffffffffffffffffffffffffff7f0000000000000000000000000000000000000000000000000000000000000000163383610cfe565b604080518281526000602082015233917f06e0c61e7e9f4912ee1f3ce060b59207b98f9a232d711462af3166aeeed1250a910160405180910390a2610c13565b33600081815260046020526040902080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00166001179055610bd7907f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff169083610cfe565b604080518281526001602082015233917f06e0c61e7e9f4912ee1f3ce060b59207b98f9a232d711462af3166aeeed1250a910160405180910390a25b50506001600055565b60405173ffffffffffffffffffffffffffffffffffffffff80851660248301528316604482015260648101829052610cf89085907f23b872dd00000000000000000000000000000000000000000000000000000000906084015b604080517fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe08184030181529190526020810180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff167fffffffff0000000000000000000000000000000000000000000000000000000090931692909217909152610d59565b50505050565b60405173ffffffffffffffffffffffffffffffffffffffff8316602482015260448101829052610d549084907fa9059cbb0000000000000000000000000000000000000000000000000000000090606401610c76565b505050565b6000610dbb826040518060400160405280602081526020017f5361666545524332303a206c6f772d6c6576656c2063616c6c206661696c65648152508573ffffffffffffffffffffffffffffffffffffffff16610e659092919063ffffffff16565b805190915015610d545780806020019051810190610dd991906110ef565b610d54576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602a60248201527f5361666545524332303a204552433230206f7065726174696f6e20646964206e60448201527f6f7420737563636565640000000000000000000000000000000000000000000060648201526084016103d5565b6060610e748484600085610e7e565b90505b9392505050565b606082471015610f10576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602660248201527f416464726573733a20696e73756666696369656e742062616c616e636520666f60448201527f722063616c6c000000000000000000000000000000000000000000000000000060648201526084016103d5565b73ffffffffffffffffffffffffffffffffffffffff85163b610f8e576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601d60248201527f416464726573733a2063616c6c20746f206e6f6e2d636f6e747261637400000060448201526064016103d5565b6000808673ffffffffffffffffffffffffffffffffffffffff168587604051610fb7919061110b565b60006040518083038185875af1925050503d8060008114610ff4576040519150601f19603f3d011682016040523d82523d6000602084013e610ff9565b606091505b5091509150611009828286611014565b979650505050505050565b60608315611023575081610e77565b8251156110335782518084602001fd5b816040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016103d59190611127565b803573ffffffffffffffffffffffffffffffffffffffff8116811461108b57600080fd5b919050565b6000602082840312156110a1578081fd5b610e7782611067565b600080604083850312156110bc578081fd5b6110c583611067565b946020939093013593505050565b6000602082840312156110e4578081fd5b8135610e7781611202565b600060208284031215611100578081fd5b8151610e7781611202565b6000825161111d8184602087016111a7565b9190910192915050565b60208152600082518060208401526111468160408501602087016111a7565b601f017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0169190910160400192915050565b6000821982111561118b5761118b6111d3565b500190565b6000828210156111a2576111a26111d3565b500390565b60005b838110156111c25781810151838201526020016111aa565b83811115610cf85750506000910152565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b801515811461121057600080fd5b5056fea26469706673582212205e23d1ea71457c98c71f114cca16895cf63047e4174cf4ac3d5d66cf0e0eeab364736f6c63430008040033"
+    };
+});
+define("@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyV2.ts", ["require", "exports", "@ijstech/eth-contract", "@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyV2.json.ts"], function (require, exports, eth_contract_6, TimeIsMoneyV2_json_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.TimeIsMoneyV2 = void 0;
+    class TimeIsMoneyV2 extends eth_contract_6.Contract {
+        constructor(wallet, address) {
+            super(wallet, address, TimeIsMoneyV2_json_1.default.abi, TimeIsMoneyV2_json_1.default.bytecode);
+            this.assign();
+        }
+        deploy(params, options) {
+            return this.__deploy([params.token, this.wallet.utils.toString(params.maximumTotalLock), this.wallet.utils.toString(params.minimumLockTime), this.wallet.utils.toString(params.startOfEntryPeriod), this.wallet.utils.toString(params.endOfEntryPeriod), this.wallet.utils.toString(params.perAddressCap)], options);
+        }
+        parseDepositEvent(receipt) {
+            return this.parseEvents(receipt, "Deposit").map(e => this.decodeDepositEvent(e));
+        }
+        decodeDepositEvent(event) {
+            let result = event.data;
+            return {
+                staker: result.staker,
+                sender: result.sender,
+                amount: new eth_contract_6.BigNumber(result.amount),
+                _event: event
+            };
+        }
+        parseWithdrawalEvent(receipt) {
+            return this.parseEvents(receipt, "Withdrawal").map(e => this.decodeWithdrawalEvent(e));
+        }
+        decodeWithdrawalEvent(event) {
+            let result = event.data;
+            return {
+                account: result.account,
+                amount: new eth_contract_6.BigNumber(result.amount),
+                heldLongEnough: result.heldLongEnough,
+                _event: event
+            };
+        }
+        assign() {
+            let endOfEntryPeriod_call = async (options) => {
+                let result = await this.call('endOfEntryPeriod', [], options);
+                return new eth_contract_6.BigNumber(result);
+            };
+            this.endOfEntryPeriod = endOfEntryPeriod_call;
+            let getCredit_call = async (account, options) => {
+                let result = await this.call('getCredit', [account], options);
+                return new eth_contract_6.BigNumber(result);
+            };
+            this.getCredit = getCredit_call;
+            let lockAmount_call = async (param1, options) => {
+                let result = await this.call('lockAmount', [param1], options);
+                return new eth_contract_6.BigNumber(result);
+            };
+            this.lockAmount = lockAmount_call;
+            let maximumTotalLock_call = async (options) => {
+                let result = await this.call('maximumTotalLock', [], options);
+                return new eth_contract_6.BigNumber(result);
+            };
+            this.maximumTotalLock = maximumTotalLock_call;
+            let minimumLockTime_call = async (options) => {
+                let result = await this.call('minimumLockTime', [], options);
+                return new eth_contract_6.BigNumber(result);
+            };
+            this.minimumLockTime = minimumLockTime_call;
+            let perAddressCap_call = async (options) => {
+                let result = await this.call('perAddressCap', [], options);
+                return new eth_contract_6.BigNumber(result);
+            };
+            this.perAddressCap = perAddressCap_call;
+            let readyToWithdraw_call = async (account, options) => {
+                let result = await this.call('readyToWithdraw', [account], options);
+                return result;
+            };
+            this.readyToWithdraw = readyToWithdraw_call;
+            let releaseTime_call = async (param1, options) => {
+                let result = await this.call('releaseTime', [param1], options);
+                return new eth_contract_6.BigNumber(result);
+            };
+            this.releaseTime = releaseTime_call;
+            let startOfEntryPeriod_call = async (options) => {
+                let result = await this.call('startOfEntryPeriod', [], options);
+                return new eth_contract_6.BigNumber(result);
+            };
+            this.startOfEntryPeriod = startOfEntryPeriod_call;
+            let token_call = async (options) => {
+                let result = await this.call('token', [], options);
+                return result;
+            };
+            this.token = token_call;
+            let totalLocked_call = async (options) => {
+                let result = await this.call('totalLocked', [], options);
+                return new eth_contract_6.BigNumber(result);
+            };
+            this.totalLocked = totalLocked_call;
+            let withdrawn_call = async (param1, options) => {
+                let result = await this.call('withdrawn', [param1], options);
+                return result;
+            };
+            this.withdrawn = withdrawn_call;
+            let lockParams = (params) => [params.to, this.wallet.utils.toString(params.amount)];
+            let lock_send = async (params, options) => {
+                let result = await this.send('lock', lockParams(params), options);
+                return result;
+            };
+            let lock_call = async (params, options) => {
+                let result = await this.call('lock', lockParams(params), options);
+                return;
+            };
+            let lock_txData = async (params, options) => {
+                let result = await this.txData('lock', lockParams(params), options);
+                return result;
+            };
+            this.lock = Object.assign(lock_send, {
+                call: lock_call,
+                txData: lock_txData
+            });
+            let withdraw_send = async (allowWithdrawalBeforeRelease, options) => {
+                let result = await this.send('withdraw', [allowWithdrawalBeforeRelease], options);
+                return result;
+            };
+            let withdraw_call = async (allowWithdrawalBeforeRelease, options) => {
+                let result = await this.call('withdraw', [allowWithdrawalBeforeRelease], options);
+                return;
+            };
+            let withdraw_txData = async (allowWithdrawalBeforeRelease, options) => {
+                let result = await this.txData('withdraw', [allowWithdrawalBeforeRelease], options);
+                return result;
+            };
+            this.withdraw = Object.assign(withdraw_send, {
+                call: withdraw_call,
+                txData: withdraw_txData
+            });
+        }
+    }
+    TimeIsMoneyV2._abi = TimeIsMoneyV2_json_1.default.abi;
+    exports.TimeIsMoneyV2 = TimeIsMoneyV2;
+});
+define("@scom/oswap-time-is-money-contract/contracts/index.ts", ["require", "exports", "@scom/oswap-time-is-money-contract/contracts/Rewards.ts", "@scom/oswap-time-is-money-contract/contracts/RewardsCommonStartDate.ts", "@scom/oswap-time-is-money-contract/contracts/TimeIsMoney.ts", "@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEther.ts", "@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEtherV2.ts", "@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyV2.ts"], function (require, exports, Rewards_1, RewardsCommonStartDate_1, TimeIsMoney_1, TimeIsMoneyEther_1, TimeIsMoneyEtherV2_1, TimeIsMoneyV2_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.TimeIsMoneyV2 = exports.TimeIsMoneyEtherV2 = exports.TimeIsMoneyEther = exports.TimeIsMoney = exports.RewardsCommonStartDate = exports.Rewards = void 0;
     Object.defineProperty(exports, "Rewards", { enumerable: true, get: function () { return Rewards_1.Rewards; } });
     Object.defineProperty(exports, "RewardsCommonStartDate", { enumerable: true, get: function () { return RewardsCommonStartDate_1.RewardsCommonStartDate; } });
     Object.defineProperty(exports, "TimeIsMoney", { enumerable: true, get: function () { return TimeIsMoney_1.TimeIsMoney; } });
     Object.defineProperty(exports, "TimeIsMoneyEther", { enumerable: true, get: function () { return TimeIsMoneyEther_1.TimeIsMoneyEther; } });
+    Object.defineProperty(exports, "TimeIsMoneyEtherV2", { enumerable: true, get: function () { return TimeIsMoneyEtherV2_1.TimeIsMoneyEtherV2; } });
+    Object.defineProperty(exports, "TimeIsMoneyV2", { enumerable: true, get: function () { return TimeIsMoneyV2_1.TimeIsMoneyV2; } });
 });
 define("@scom/oswap-time-is-money-contract", ["require", "exports", "@scom/oswap-time-is-money-contract/contracts/index.ts"], function (require, exports, Contracts) {
     "use strict";

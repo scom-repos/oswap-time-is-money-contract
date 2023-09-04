@@ -1,0 +1,8 @@
+{
+    "name": "@scom/oswap-time-is-money-contract",
+    "type": "widget",
+    "version": "0.1.1",
+    "dependencies": [
+        "@ijstech/eth-contract"
+    ]
+}

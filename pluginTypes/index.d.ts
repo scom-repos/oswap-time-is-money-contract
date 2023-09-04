@@ -534,12 +534,270 @@ declare module "@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEther.ts
         }
     }
 }
+/// <amd-module name="@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEtherV2.json.ts" />
+declare module "@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEtherV2.json.ts" {
+    const _default_4: {
+        abi: ({
+            inputs: {
+                internalType: string;
+                name: string;
+                type: string;
+            }[];
+            stateMutability: string;
+            type: string;
+            anonymous?: undefined;
+            name?: undefined;
+            outputs?: undefined;
+        } | {
+            anonymous: boolean;
+            inputs: {
+                indexed: boolean;
+                internalType: string;
+                name: string;
+                type: string;
+            }[];
+            name: string;
+            type: string;
+            stateMutability?: undefined;
+            outputs?: undefined;
+        } | {
+            inputs: {
+                internalType: string;
+                name: string;
+                type: string;
+            }[];
+            name: string;
+            outputs: {
+                internalType: string;
+                name: string;
+                type: string;
+            }[];
+            stateMutability: string;
+            type: string;
+            anonymous?: undefined;
+        })[];
+        bytecode: string;
+    };
+    export default _default_4;
+}
+/// <amd-module name="@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEtherV2.ts" />
+declare module "@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEtherV2.ts" {
+    import { IWallet, Contract as _Contract, TransactionReceipt, BigNumber, Event, TransactionOptions } from "@ijstech/eth-contract";
+    export interface IDeployParams {
+        maximumTotalLock: number | BigNumber;
+        minimumLockTime: number | BigNumber;
+        startOfEntryPeriod: number | BigNumber;
+        endOfEntryPeriod: number | BigNumber;
+        perAddressCap: number | BigNumber;
+    }
+    export class TimeIsMoneyEtherV2 extends _Contract {
+        static _abi: any;
+        constructor(wallet: IWallet, address?: string);
+        deploy(params: IDeployParams, options?: TransactionOptions): Promise<string>;
+        parseDepositEvent(receipt: TransactionReceipt): TimeIsMoneyEtherV2.DepositEvent[];
+        decodeDepositEvent(event: Event): TimeIsMoneyEtherV2.DepositEvent;
+        parseWithdrawalEvent(receipt: TransactionReceipt): TimeIsMoneyEtherV2.WithdrawalEvent[];
+        decodeWithdrawalEvent(event: Event): TimeIsMoneyEtherV2.WithdrawalEvent;
+        endOfEntryPeriod: {
+            (options?: TransactionOptions): Promise<BigNumber>;
+        };
+        getCredit: {
+            (account: string, options?: TransactionOptions): Promise<BigNumber>;
+        };
+        lock: {
+            (to: string, options?: number | BigNumber | TransactionOptions): Promise<TransactionReceipt>;
+            call: (to: string, options?: number | BigNumber | TransactionOptions) => Promise<void>;
+            txData: (to: string, options?: number | BigNumber | TransactionOptions) => Promise<string>;
+        };
+        lockAmount: {
+            (param1: string, options?: TransactionOptions): Promise<BigNumber>;
+        };
+        maximumTotalLock: {
+            (options?: TransactionOptions): Promise<BigNumber>;
+        };
+        minimumLockTime: {
+            (options?: TransactionOptions): Promise<BigNumber>;
+        };
+        perAddressCap: {
+            (options?: TransactionOptions): Promise<BigNumber>;
+        };
+        readyToWithdraw: {
+            (account: string, options?: TransactionOptions): Promise<boolean>;
+        };
+        releaseTime: {
+            (param1: string, options?: TransactionOptions): Promise<BigNumber>;
+        };
+        startOfEntryPeriod: {
+            (options?: TransactionOptions): Promise<BigNumber>;
+        };
+        totalLocked: {
+            (options?: TransactionOptions): Promise<BigNumber>;
+        };
+        withdraw: {
+            (allowWithdrawalBeforeRelease: boolean, options?: TransactionOptions): Promise<TransactionReceipt>;
+            call: (allowWithdrawalBeforeRelease: boolean, options?: TransactionOptions) => Promise<void>;
+            txData: (allowWithdrawalBeforeRelease: boolean, options?: TransactionOptions) => Promise<string>;
+        };
+        withdrawn: {
+            (param1: string, options?: TransactionOptions): Promise<boolean>;
+        };
+        private assign;
+    }
+    export module TimeIsMoneyEtherV2 {
+        interface DepositEvent {
+            staker: string;
+            sender: string;
+            amount: BigNumber;
+            _event: Event;
+        }
+        interface WithdrawalEvent {
+            account: string;
+            amount: BigNumber;
+            heldLongEnough: boolean;
+            _event: Event;
+        }
+    }
+}
+/// <amd-module name="@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyV2.json.ts" />
+declare module "@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyV2.json.ts" {
+    const _default_5: {
+        abi: ({
+            inputs: {
+                internalType: string;
+                name: string;
+                type: string;
+            }[];
+            stateMutability: string;
+            type: string;
+            anonymous?: undefined;
+            name?: undefined;
+            outputs?: undefined;
+        } | {
+            anonymous: boolean;
+            inputs: {
+                indexed: boolean;
+                internalType: string;
+                name: string;
+                type: string;
+            }[];
+            name: string;
+            type: string;
+            stateMutability?: undefined;
+            outputs?: undefined;
+        } | {
+            inputs: {
+                internalType: string;
+                name: string;
+                type: string;
+            }[];
+            name: string;
+            outputs: {
+                internalType: string;
+                name: string;
+                type: string;
+            }[];
+            stateMutability: string;
+            type: string;
+            anonymous?: undefined;
+        })[];
+        bytecode: string;
+    };
+    export default _default_5;
+}
+/// <amd-module name="@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyV2.ts" />
+declare module "@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyV2.ts" {
+    import { IWallet, Contract as _Contract, TransactionReceipt, BigNumber, Event, TransactionOptions } from "@ijstech/eth-contract";
+    export interface IDeployParams {
+        token: string;
+        maximumTotalLock: number | BigNumber;
+        minimumLockTime: number | BigNumber;
+        startOfEntryPeriod: number | BigNumber;
+        endOfEntryPeriod: number | BigNumber;
+        perAddressCap: number | BigNumber;
+    }
+    export interface ILockParams {
+        to: string;
+        amount: number | BigNumber;
+    }
+    export class TimeIsMoneyV2 extends _Contract {
+        static _abi: any;
+        constructor(wallet: IWallet, address?: string);
+        deploy(params: IDeployParams, options?: TransactionOptions): Promise<string>;
+        parseDepositEvent(receipt: TransactionReceipt): TimeIsMoneyV2.DepositEvent[];
+        decodeDepositEvent(event: Event): TimeIsMoneyV2.DepositEvent;
+        parseWithdrawalEvent(receipt: TransactionReceipt): TimeIsMoneyV2.WithdrawalEvent[];
+        decodeWithdrawalEvent(event: Event): TimeIsMoneyV2.WithdrawalEvent;
+        endOfEntryPeriod: {
+            (options?: TransactionOptions): Promise<BigNumber>;
+        };
+        getCredit: {
+            (account: string, options?: TransactionOptions): Promise<BigNumber>;
+        };
+        lock: {
+            (params: ILockParams, options?: TransactionOptions): Promise<TransactionReceipt>;
+            call: (params: ILockParams, options?: TransactionOptions) => Promise<void>;
+            txData: (params: ILockParams, options?: TransactionOptions) => Promise<string>;
+        };
+        lockAmount: {
+            (param1: string, options?: TransactionOptions): Promise<BigNumber>;
+        };
+        maximumTotalLock: {
+            (options?: TransactionOptions): Promise<BigNumber>;
+        };
+        minimumLockTime: {
+            (options?: TransactionOptions): Promise<BigNumber>;
+        };
+        perAddressCap: {
+            (options?: TransactionOptions): Promise<BigNumber>;
+        };
+        readyToWithdraw: {
+            (account: string, options?: TransactionOptions): Promise<boolean>;
+        };
+        releaseTime: {
+            (param1: string, options?: TransactionOptions): Promise<BigNumber>;
+        };
+        startOfEntryPeriod: {
+            (options?: TransactionOptions): Promise<BigNumber>;
+        };
+        token: {
+            (options?: TransactionOptions): Promise<string>;
+        };
+        totalLocked: {
+            (options?: TransactionOptions): Promise<BigNumber>;
+        };
+        withdraw: {
+            (allowWithdrawalBeforeRelease: boolean, options?: TransactionOptions): Promise<TransactionReceipt>;
+            call: (allowWithdrawalBeforeRelease: boolean, options?: TransactionOptions) => Promise<void>;
+            txData: (allowWithdrawalBeforeRelease: boolean, options?: TransactionOptions) => Promise<string>;
+        };
+        withdrawn: {
+            (param1: string, options?: TransactionOptions): Promise<boolean>;
+        };
+        private assign;
+    }
+    export module TimeIsMoneyV2 {
+        interface DepositEvent {
+            staker: string;
+            sender: string;
+            amount: BigNumber;
+            _event: Event;
+        }
+        interface WithdrawalEvent {
+            account: string;
+            amount: BigNumber;
+            heldLongEnough: boolean;
+            _event: Event;
+        }
+    }
+}
 /// <amd-module name="@scom/oswap-time-is-money-contract/contracts/index.ts" />
 declare module "@scom/oswap-time-is-money-contract/contracts/index.ts" {
     export { Rewards } from "@scom/oswap-time-is-money-contract/contracts/Rewards.ts";
     export { RewardsCommonStartDate } from "@scom/oswap-time-is-money-contract/contracts/RewardsCommonStartDate.ts";
     export { TimeIsMoney } from "@scom/oswap-time-is-money-contract/contracts/TimeIsMoney.ts";
     export { TimeIsMoneyEther } from "@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEther.ts";
+    export { TimeIsMoneyEtherV2 } from "@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyEtherV2.ts";
+    export { TimeIsMoneyV2 } from "@scom/oswap-time-is-money-contract/contracts/TimeIsMoneyV2.ts";
 }
 /// <amd-module name="@scom/oswap-time-is-money-contract" />
 declare module "@scom/oswap-time-is-money-contract" {
